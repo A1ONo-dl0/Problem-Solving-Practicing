@@ -38,7 +38,7 @@ bool CheckScalarMatrix(short Matrix[Rows][Cols], short Rows, short Cols)
 		{
 			if (i == j)
 			{
-				if (Matrix[i][j] != Matrix[i][i])
+				if (Matrix[i][j] != Matrix[0][0])
 					return false;
 			}
 			else if (Matrix[i][j] != 0)
