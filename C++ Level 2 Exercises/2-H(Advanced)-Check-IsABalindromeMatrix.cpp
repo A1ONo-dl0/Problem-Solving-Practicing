@@ -6,11 +6,6 @@ using namespace std;
 const short Rows = 3;
 const short Cols = 3;
 
-short GenerateRandomNumbers(short from, short to)
-{
-	return rand() % (to - from + 1) + from;
-}
-
 void FillMatrixByUser(short Matrix[Rows][Cols])
 {
 	cout << "Enter Elements to The Matrix :\n";
