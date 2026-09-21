@@ -39,7 +39,7 @@ bool IsBalindromeMatrix(short Matr[Rows][Cols])
 {
 	for (short i = 0; i < Rows; i++)
 	{
-		for (short j = 0; j < Cols; j++)
+		for (short j = 0; j < Cols/2; j++)
 		{
 			if (Matr[i][j] != Matr[i][Cols - 1 - j])
 				return false;
