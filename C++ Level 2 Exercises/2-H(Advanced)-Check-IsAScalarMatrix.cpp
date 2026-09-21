@@ -5,7 +5,7 @@ using namespace std;
 const short Rows = 3;
 const short Cols = 3;
 
-void FillMatrixByUser(short Matrix[Rows][Cols], short Rows, short Cols)
+void FillMatrixByUser(short Matrix[Rows][Cols])
 {
 	cout << "Enter Elements For The Matrix :\n";
 	for (short i = 0; i < Rows; i++)
@@ -18,7 +18,7 @@ void FillMatrixByUser(short Matrix[Rows][Cols], short Rows, short Cols)
 	}
 }
 
-void PrintMatrix(short Matrix[Rows][Cols], short Rows, short Cols)
+void PrintMatrix(short Matrix[Rows][Cols])
 {
 	for (short i = 0; i < Rows; i++)
 	{
@@ -30,7 +30,7 @@ void PrintMatrix(short Matrix[Rows][Cols], short Rows, short Cols)
 	}
 }
 
-bool CheckScalarMatrix(short Matrix[Rows][Cols], short Rows, short Cols)
+bool CheckScalarMatrix(short Matrix[Rows][Cols])
 {
 	for (short i = 0;i < Rows; i++)
 	{
@@ -56,13 +56,13 @@ int main()
 {
 	short Matrix[Rows][Cols];
 
-	FillMatrixByUser(Matrix, Rows, Cols);
+	FillMatrixByUser(Matrix);
 
 	cout << "The Matrix is :\n";
-	PrintMatrix(Matrix, Rows, Cols);
+	PrintMatrix(Matrix);
 
 
-	if (CheckScalarMatrix(Matrix, Rows, Cols))
+	if (CheckScalarMatrix(Matrix))
 	{
 		cout << "\nYes: Matrix is Scalar\n";
 	}
