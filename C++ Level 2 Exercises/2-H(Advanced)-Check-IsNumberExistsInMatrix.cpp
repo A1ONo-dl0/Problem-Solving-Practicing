@@ -11,7 +11,7 @@ short GenerateRandomNumbers(short from, short to)
 	return rand() % (to - from + 1) + from;
 }
 
-void FillMatrixWithRandomNumbers(short Matrix[Rows][Cols], short Rows, short Cols)
+void FillMatrixWithRandomNumbers(short Matrix[Rows][Cols])
 {
 	for (short i = 0; i < Rows; i++)
 	{
@@ -22,7 +22,7 @@ void FillMatrixWithRandomNumbers(short Matrix[Rows][Cols], short Rows, short Col
 	}
 }
 
-void PrintMatrix(short Matrix[Rows][Cols], short Rows, short Cols)
+void PrintMatrix(short Matrix[Rows][Cols])
 {
 	for (short i = 0; i < Rows; i++)
 	{
@@ -53,7 +53,7 @@ short UserInput()
 	return num;
 }
 
-bool IsNumberInMatrixExists(short Matrix[Rows][Cols], short NumByUser, short Rows, short Cols)
+bool IsNumberInMatrixExists(short Matrix[Rows][Cols], short NumByUser)
 {
 	for (short i = 0; i < Rows; i++)
 	{
@@ -72,15 +72,15 @@ int main()
 
 	short Matrix[Rows][Cols];
 
-	FillMatrixWithRandomNumbers(Matrix, Rows, Cols);
+	FillMatrixWithRandomNumbers(Matrix);
 
 	cout << "The Matrix is :\n";
-	PrintMatrix(Matrix, Rows, Cols);
+	PrintMatrix(Matrix);
 
 	short NumByUser = UserInput();
 
 
-	if (IsNumberInMatrixExists(Matrix, NumByUser, Rows, Cols))
+	if (IsNumberInMatrixExists(Matrix, NumByUser))
 	{
 		cout << "\nYes: Number is Exists in Matrix \n";
 	}
