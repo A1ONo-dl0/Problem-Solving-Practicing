@@ -11,7 +11,7 @@ short GenerateRandomNumbers(short from, short to)
 	return rand() % (to - from + 1) + from;
 }
 
-void FillMatrixWithRandomNumbers(short Matrix[Rows][Cols], short Rows, short Cols)
+void FillMatrixWithRandomNumbers(short Matrix[Rows][Cols])
 {
 	for (short i = 0; i < Rows; i++)
 	{
@@ -22,7 +22,7 @@ void FillMatrixWithRandomNumbers(short Matrix[Rows][Cols], short Rows, short Col
 	}
 }
 
-void PrintMatrix(short Matrix[Rows][Cols], short Rows, short Cols)
+void PrintMatrix(short Matrix[Rows][Cols])
 {
 	for (short i = 0; i < Rows; i++)
 	{
@@ -34,7 +34,7 @@ void PrintMatrix(short Matrix[Rows][Cols], short Rows, short Cols)
 	}
 }
 
-short CountNumberInMatrix(short Matrix[Rows][Cols], short Number, short Rows, short Cols)
+short CountNumberInMatrix(short Matrix[Rows][Cols], short Number)
 {
 	short CountOfNum = 0;
 	for (short i = 0; i < Rows; i++)
@@ -49,11 +49,11 @@ short CountNumberInMatrix(short Matrix[Rows][Cols], short Number, short Rows, sh
 	return CountOfNum;
 }
 
-bool IsSparceMatrix(short Matrix[Rows][Cols], short Rows, short Cols)
+bool IsSparceMatrix(short Matrix[Rows][Cols])
 {
 	float MatrixSize = Rows * Cols;
 
-	return (CountNumberInMatrix(Matrix, 0, Rows, Cols) >= ceil(MatrixSize / 2));
+	return (CountNumberInMatrix(Matrix, 0) >= ceil(MatrixSize / 2));
 }
 
 int main()
@@ -62,12 +62,12 @@ int main()
 
 	short Matrix[Rows][Cols] = { {0,2,0},{2,0,4},{0,0,7} };
 
-	//FillMatrixWithRandomNumbers(Matrix, Rows, Cols);
+	//FillMatrixWithRandomNumbers(Matrix);
 
 	cout << "The Matrix is :\n";
-	PrintMatrix(Matrix, Rows, Cols);
+	PrintMatrix(Matrix);
 
-	if (IsSparceMatrix(Matrix, Rows, Cols))
+	if (IsSparceMatrix(Matrix))
 	{
 		cout << "\nYes: is a Sparse Matrix\n";
 	}
