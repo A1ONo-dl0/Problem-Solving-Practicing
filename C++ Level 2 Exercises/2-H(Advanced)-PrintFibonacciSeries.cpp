@@ -1,10 +1,6 @@
 #include <iostream>
 #include <string>
-#include <iomanip>
 using namespace std;
-
-const short Rows = 3;
-const short Cols = 3;
 
 short ReadPositiveNumber(string message)
 {
