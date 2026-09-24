@@ -11,7 +11,7 @@ short GenerateRandomNumbers(short from, short to)
 	return rand() % (to - from + 1) + from;
 }
 
-void FillMatrixWithRandomNumbers(short Matrix[Rows][Cols], short Rows, short Cols)
+void FillMatrixWithRandomNumbers(short Matrix[Rows][Cols)
 {
 	for (short i = 0; i < Rows; i++)
 	{
@@ -22,7 +22,7 @@ void FillMatrixWithRandomNumbers(short Matrix[Rows][Cols], short Rows, short Col
 	}
 }
 
-void PrintMatrix(short Matrix[Rows][Cols], short Rows, short Cols)
+void PrintMatrix(short Matrix[Rows][Cols])
 {
 	for (short i = 0; i < Rows; i++)
 	{
@@ -49,7 +49,7 @@ bool IsAlreadyPrinted(short Matrix[Rows][Cols], short Num, short CurrentRow, sho
 	return false;
 }
 
-bool IsNumberIntersectedBetween2Matrices(short Num, short Matr2[Rows][Cols], short Rows, short Cols)
+bool IsNumberIntersectedBetween2Matrices(short Num, short Matr2[Rows][Cols])
 {
 
 	for (short i = 0; i < Rows; i++)
@@ -64,14 +64,14 @@ bool IsNumberIntersectedBetween2Matrices(short Num, short Matr2[Rows][Cols], sho
 	return false;
 }
 
-void PrintIntersectedNumsInMatrices(short Matr1[Rows][Cols], short Matr2[Rows][Cols], short Rows, short Cols)
+void PrintIntersectedNumsInMatrices(short Matr1[Rows][Cols], short Matr2[Rows][Cols])
 {
 	cout << "\nIntersected Numbers are : ";
 	for (short i = 0; i < Rows; i++)
 	{
 		for (short j = 0; j < Cols; j++)
 		{
-			if (IsNumberIntersectedBetween2Matrices(Matr1[i][j], Matr2, Rows, Cols))
+			if (IsNumberIntersectedBetween2Matrices(Matr1[i][j], Matr2))
 			{
 				if (!IsAlreadyPrinted(Matr1, Matr1[i][j], i, j))
 					cout << setw(2) << Matr1[i][j] << "  ";
@@ -89,15 +89,15 @@ int main()
 	short Matrix2[Rows][Cols];
 
 
-	FillMatrixWithRandomNumbers(Matrix, Rows, Cols);
+	FillMatrixWithRandomNumbers(Matrix);
 	cout << "Matrix 1 is :\n";
 	PrintMatrix(Matrix, Rows, Cols);
 
-	FillMatrixWithRandomNumbers(Matrix2, Rows, Cols);
+	FillMatrixWithRandomNumbers(Matrix2);
 	cout << "Matrix 2 is :\n";
 	PrintMatrix(Matrix2, Rows, Cols);
 
-	PrintIntersectedNumsInMatrices(Matrix, Matrix2, Rows, Cols);
+	PrintIntersectedNumsInMatrices(Matrix, Matrix2);
 
 	system("pause>0");
 
