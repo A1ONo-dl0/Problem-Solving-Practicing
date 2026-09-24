@@ -12,7 +12,7 @@ short RandomNumbers(short from, short to)
 	return rand() % (to - from + 1) + from;
 }
 
-void FillMatrixByRandomNumbers(short Matr[Rows][Cols], short rows, short cols)
+void FillMatrixByRandomNumbers(short Matr[Rows][Cols])
 {
 	for (short i = 0; i < rows; i++)
 	{
@@ -23,7 +23,7 @@ void FillMatrixByRandomNumbers(short Matr[Rows][Cols], short rows, short cols)
 	}
 }
 
-void PrintMatrix(short Matr[Rows][Cols], short rows, short cols)
+void PrintMatrix(short Matr[Rows][Cols])
 {
 	for (short i = 0; i < rows; i++)
 	{
@@ -35,9 +35,9 @@ void PrintMatrix(short Matr[Rows][Cols], short rows, short cols)
 	}
 }
 
-void PrintMiddleRow(short Matr[Rows][Cols], short Rows, short Cols)
+void PrintMiddleRow(short Matr[Rows][Cols])
 {
-	short Mid = (Rows / 2) + 0.5;
+	short Mid = (Rows / 2);
 	for (short i = 0; i < Rows; i++)
 	{
 		if (Mid == i)
@@ -51,9 +51,9 @@ void PrintMiddleRow(short Matr[Rows][Cols], short Rows, short Cols)
 	}
 }
 
-void PrintMiddleCol(short Matr[Rows][Cols], short Rows, short Cols)
+void PrintMiddleCol(short Matr[Rows][Cols])
 {
-	short Mid = (Cols / 2) + 0.5;
+	short Mid = (Cols / 2);
 
 	for (short j = 0; j < Cols; j++)
 	{
