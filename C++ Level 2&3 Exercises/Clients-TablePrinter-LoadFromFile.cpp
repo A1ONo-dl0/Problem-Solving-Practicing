@@ -11,20 +11,6 @@ struct stClientRecord
 	double AccountBalance = 0;
 };
 
-void PrintTableHeader(vector <stClientRecord> vClient)
-{
-	cout << setw(59) << " Client List (" << vClient.size() << ") Client(s).\n" << endl;
-	cout << string(120, char(196)) << endl;
-
-	cout << "| " << setw(16) << left << "Account Number"
-		<< "| " << setw(12) << left << "Pin Code"
-		<< "| " << setw(35) << left << "Client Name"
-		<< "| " << setw(15) << left << "Phone"
-		<< "| " << setw(10) << left << "Balance" << " |" << endl;
-
-	cout << string(120, char(196)) << endl;
-}
-
 vector <string> SaveClientRecordToVector(string Line, string delim)
 {
 	short pos = 0;
@@ -65,15 +51,6 @@ stClientRecord SaveClientRecordToStruct(string Line, string FileName)
 
 }
 
-void PrintCurrentLine(stClientRecord stClient)
-{
-	cout << "| " << setw(16) << left << stClient.AccountNum
-		<< "| " << setw(12) << left << stClient.PinCode
-		<< "| " << setw(35) << left << stClient.Name
-		<< "| " << setw(15) << left << stClient.Phone
-		<< "| " << setw(10) << left << stClient.AccountBalance << " |" << endl;
-}
-
 vector <stClientRecord> LoadDataFromFile(string FileName)
 {
 	fstream MyFile;
@@ -99,6 +76,30 @@ vector <stClientRecord> LoadDataFromFile(string FileName)
 
 	return vClient;
 }
+
+void PrintTableHeader(vector <stClientRecord> vClient)
+{
+	cout << setw(59) << " Client List (" << vClient.size() << ") Client(s).\n" << endl;
+	cout << string(120, char(196)) << endl;
+
+	cout << "| " << setw(16) << left << "Account Number"
+		<< "| " << setw(12) << left << "Pin Code"
+		<< "| " << setw(35) << left << "Client Name"
+		<< "| " << setw(15) << left << "Phone"
+		<< "| " << setw(10) << left << "Balance" << " |" << endl;
+
+	cout << string(120, char(196)) << endl;
+}
+
+void PrintCurrentLine(stClientRecord stClient)
+{
+	cout << "| " << setw(16) << left << stClient.AccountNum
+		<< "| " << setw(12) << left << stClient.PinCode
+		<< "| " << setw(35) << left << stClient.Name
+		<< "| " << setw(15) << left << stClient.Phone
+		<< "| " << setw(10) << left << stClient.AccountBalance << " |" << endl;
+}
+
 
 void PrintClientsSechdual(vector <stClientRecord> vClient, string FileName)
 {
